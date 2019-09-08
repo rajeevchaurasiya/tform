@@ -1,0 +1,36 @@
+
+<form style="max-width:500px;margin:auto" #contactForm="ngForm" (ngSubmit)="onSubmit()">
+        <h2 class="text-center">Registeration Form</h2>
+        <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="Username" name="name" required [(ngModel)]="registraion.name" #name >
+            </div>
+              <div class="input-container">
+                    <i class="fa fa-id-card icon"></i>
+                    <input class="input-field" type="number" placeholder="Emp ID" name="eid" required [(ngModel)]="registraion.id" maxlength="3" 
+                    min="0"  >
+                  </div>
+
+                  <div class="input-container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input-field" type="email" placeholder="Email" name="email" required [(ngModel)]="registraion.email" autocomplete="off">
+                      </div>
+            
+                      <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input class="input-field" type="password" placeholder="Password" name="empPwd" required [(ngModel)]="registraion.password" >
+                          </div>
+                    <div class="input-container">
+                                <i class="fa fa-calendar icon"></i>
+                                <input class="input-field" type="date" placeholder="Select Date" name="date"  required [(ngModel)]="registraion.date" >
+                              </div>
+
+                              <button type="submit" [hidden]="!contactForm.form.valid" class="btn">Register</button>
+</form>
+<div [hidden]=!submitted class="input-container" style="border:2px solid #006699">
+Form Submitted.
+<p><strong>Name</strong>{{registraion.name}}</p><br/>
+<p><strong>Employe ID</strong>{{registraion.id}}</p><br/>
+<p><strong>Email</strong>{{registraion.email}}</p><br/>
+<p><strong>Date</strong>{{registraion.date}}</p>
+</div>
